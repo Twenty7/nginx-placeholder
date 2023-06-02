@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+</head>
+<body style="background-color: #EEE;">
+  <div id="domain-div"></div>
+
+  <script language="Javascript">
+    let d = window.location.hostname;
+    let t = document.getElementById('domain-div');
+    t.textContent = d;
+    document.title = d;
+  </script>
+</body>
+</html>
