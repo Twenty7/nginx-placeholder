@@ -2,8 +2,8 @@ version: '3.9'
 services:
   web:
     image: nginx:latest
-    ports:
-      - "8080:80"
+    # ports:
+    #   - "8080:80"
     volumes:
       - ./src:/usr/share/nginx/html
     deploy:
@@ -28,3 +28,11 @@ services:
         - "traefik.http.middlewares.app-compress.compress=true"
         - "traefik.http.middlewares.https_redirect.redirectscheme.scheme=https"
         - "traefik.http.middlewares.https_redirect.redirectscheme.permanent=true"
+      resources:
+        limits:
+          cpus: 0.1
+          memory: 50M
+      placement:
+        constraints:
+          - "node.labels.app==${DOCKER_APP}"
+          - "node.labels.role==${DOCKER_ROLE}"
