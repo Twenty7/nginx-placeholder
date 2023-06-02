@@ -30,7 +30,7 @@ services:
         - "traefik.http.middlewares.https_redirect.redirectscheme.permanent=true"
       resources:
         limits:
-          cpus: 0.1
+          cpus: "0.1"
           memory: 50M
       placement:
         constraints:
