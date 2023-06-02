@@ -20,7 +20,7 @@ services:
         - "traefik.http.routers.${APP_NAME}-https.tls.certresolver=lets-encrypt"
         - "traefik.http.routers.${APP_NAME}-https.service=${APP_NAME}-service"
         - "traefik.http.services.${APP_NAME}-service.loadbalancer.server.port=80"
-        - "traefik.http.services.${APP_NAME}-service.loadbalancer.healthcheck.path=/health-check"
+        - "traefik.http.services.${APP_NAME}-service.loadbalancer.healthcheck.path=/"
         - "traefik.http.services.${APP_NAME}-service.loadbalancer.healthcheck.port=80"
         - "traefik.http.services.${APP_NAME}-service.loadbalancer.healthcheck.hostname=${APP_DOMAIN}_web"
         - "traefik.http.services.${APP_NAME}-service.loadbalancer.healthcheck.interval=60s"
