@@ -36,3 +36,9 @@ services:
         constraints:
           - "node.labels.app==${DOCKER_APP}"
           - "node.labels.role==${DOCKER_ROLE}"
+    networks:
+      - traefik-cejd
+
+networks:
+  traefik-cejd:
+    external: true
